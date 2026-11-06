@@ -3,7 +3,6 @@ import { FruitScene, PLAYFIELD } from './FruitScene';
 
 const endCard = document.querySelector<HTMLElement>('#end-card')!;
 const result = document.querySelector<HTMLElement>('#round-result')!;
-const ctaStatus = document.querySelector<HTMLElement>('#cta-status')!;
 
 const fruitScene = new FruitScene((score, total) => {
   result.textContent = `You sliced ${score} of ${total}`;
@@ -11,13 +10,8 @@ const fruitScene = new FruitScene((score, total) => {
   result.focus();
 });
 
-document.querySelector('#play-full-game')!.addEventListener('click', () => {
-  ctaStatus.textContent = 'Full game link coming soon.';
-});
-
 document.querySelector('#play-again')!.addEventListener('click', () => {
   endCard.hidden = true;
-  ctaStatus.textContent = '';
   fruitScene.scene.restart();
 });
 

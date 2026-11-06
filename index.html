@@ -52,8 +52,11 @@
         font-size: 28px;
       }
 
-      .end-panel button {
-        display: block;
+      .end-panel button,
+      .end-panel a {
+        box-sizing: border-box;
+        display: grid;
+        place-items: center;
         width: 100%;
         min-height: 44px;
         padding: 10px 12px;
@@ -62,6 +65,7 @@
         background: #ff715b;
         color: #18243b;
         font: 700 16px sans-serif;
+        text-decoration: none;
         cursor: pointer;
       }
 
@@ -72,9 +76,6 @@
         color: #fff;
       }
 
-      #cta-status:not(:empty) {
-        margin-top: 12px;
-      }
     </style>
   </head>
   <body>
@@ -83,9 +84,8 @@
       <div class="end-panel">
         <p>Time’s up</p>
         <h1 id="round-result" tabindex="-1"></h1>
-        <button id="play-full-game" type="button">Play the full game</button>
+        <a href="https://www.marceljuca.com/">View portfolio</a>
         <button id="play-again" type="button">Play again</button>
-        <p id="cta-status" role="status"></p>
       </div>
     </section>
     <script type="module" src="/src/main.ts"></script>
