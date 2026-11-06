@@ -20,6 +20,8 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.publish.outputs.page_url }}
+    env:
+      PAGES_ARTIFACT_NAME: github-pages-${{ github.run_attempt }}
 
     steps:
       - uses: actions/checkout@v7
@@ -36,7 +38,10 @@ jobs:
 
       - uses: actions/upload-pages-artifact@v5
         with:
+          name: ${{ env.PAGES_ARTIFACT_NAME }}
           path: dist
 
       - uses: actions/deploy-pages@v5
         id: publish
+        with:
+          artifact_name: ${{ env.PAGES_ARTIFACT_NAME }}
