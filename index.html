@@ -16,10 +16,78 @@
         overflow: hidden;
         touch-action: none;
       }
+
+      #end-card {
+        position: fixed;
+        inset: 0;
+        padding: 16px;
+        overflow: auto;
+        background: rgb(11 16 32 / 85%);
+        color: #fff;
+        font-family: sans-serif;
+        text-align: center;
+      }
+
+      #end-card:not([hidden]) {
+        display: grid;
+        place-items: center;
+      }
+
+      .end-panel {
+        box-sizing: border-box;
+        width: min(100%, 320px);
+        padding: 24px;
+        border: 1px solid #415578;
+        border-radius: 20px;
+        background: #18243b;
+      }
+
+      .end-panel p {
+        margin: 0;
+        color: #b9cce6;
+      }
+
+      .end-panel h1 {
+        margin: 8px 0 20px;
+        font-size: 28px;
+      }
+
+      .end-panel button {
+        display: block;
+        width: 100%;
+        min-height: 44px;
+        padding: 10px 12px;
+        border: 1px solid transparent;
+        border-radius: 10px;
+        background: #ff715b;
+        color: #18243b;
+        font: 700 16px sans-serif;
+        cursor: pointer;
+      }
+
+      #play-again {
+        margin-top: 8px;
+        border-color: #617598;
+        background: transparent;
+        color: #fff;
+      }
+
+      #cta-status:not(:empty) {
+        margin-top: 12px;
+      }
     </style>
   </head>
   <body>
     <main id="game" aria-label="Fruit Slice"></main>
+    <section id="end-card" aria-labelledby="round-result" hidden>
+      <div class="end-panel">
+        <p>Time’s up</p>
+        <h1 id="round-result" tabindex="-1"></h1>
+        <button id="play-full-game" type="button">Play the full game</button>
+        <button id="play-again" type="button">Play again</button>
+        <p id="cta-status" role="status"></p>
+      </div>
+    </section>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>
