@@ -3,9 +3,11 @@ import { FruitScene, PLAYFIELD } from './FruitScene';
 
 const endCard = document.querySelector<HTMLElement>('#end-card')!;
 const result = document.querySelector<HTMLElement>('#round-result')!;
+const finalScore = document.querySelector<HTMLElement>('#round-score')!;
 
 const fruitScene = new FruitScene((score, total) => {
-  result.textContent = `You sliced ${score} of ${total}`;
+  result.textContent = score === total ? 'Clean sweep!' : 'Time’s up';
+  finalScore.textContent = `You sliced ${score} of ${total}`;
   endCard.hidden = false;
   result.focus();
 });

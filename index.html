@@ -22,8 +22,8 @@
         inset: 0;
         padding: 16px;
         overflow: auto;
-        background: rgb(11 16 32 / 85%);
-        color: #fff;
+        background: rgb(24 13 9 / 84%);
+        color: #fff4df;
         font-family: sans-serif;
         text-align: center;
       }
@@ -37,19 +37,28 @@
         box-sizing: border-box;
         width: min(100%, 320px);
         padding: 24px;
-        border: 1px solid #415578;
+        border: 1px solid #7c563c;
         border-radius: 20px;
-        background: #18243b;
+        background: #2b1c15;
       }
 
       .end-panel p {
         margin: 0;
-        color: #b9cce6;
+        color: #e7c7a4;
       }
 
       .end-panel h1 {
-        margin: 8px 0 20px;
+        margin: 0 0 6px;
         font-size: 28px;
+      }
+
+      #round-score {
+        font-size: 20px;
+      }
+
+      .end-panel .end-credit {
+        margin: 22px 0 8px;
+        font-size: 14px;
       }
 
       .end-panel button,
@@ -62,8 +71,8 @@
         padding: 10px 12px;
         border: 1px solid transparent;
         border-radius: 10px;
-        background: #ff715b;
-        color: #18243b;
+        background: #ffbd72;
+        color: #2b1c15;
         font: 700 16px sans-serif;
         text-decoration: none;
         cursor: pointer;
@@ -71,19 +80,19 @@
 
       #play-again {
         margin-top: 8px;
-        border-color: #617598;
+        border-color: #9b7558;
         background: transparent;
-        color: #fff;
+        color: #fff4df;
       }
-
     </style>
   </head>
   <body>
     <main id="game" aria-label="Fruit Slice"></main>
-    <section id="end-card" aria-labelledby="round-result" hidden>
+    <section id="end-card" aria-labelledby="round-result" aria-describedby="round-score" hidden>
       <div class="end-panel">
-        <p>Time’s up</p>
         <h1 id="round-result" tabindex="-1"></h1>
+        <p id="round-score"></p>
+        <p class="end-credit">Built by Marcel Jucá</p>
         <a href="https://www.marceljuca.com/">View portfolio</a>
         <button id="play-again" type="button">Play again</button>
       </div>
